@@ -1,0 +1,8 @@
+package com.app.demo.ex;
+
+public class Person {
+
+	String name = "Sufyan";
+	int age = 27;
+	String height = "5 foot 10 inches"; 
+}

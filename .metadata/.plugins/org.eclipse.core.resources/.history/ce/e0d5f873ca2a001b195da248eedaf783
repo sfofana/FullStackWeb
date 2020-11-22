@@ -1,0 +1,57 @@
+package com.app.demo;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+import com.app.demo.ex.Car;
+import com.app.demo.ex.Person;
+
+@SpringBootApplication
+public class JavaBasicApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(JavaBasicApplication.class, args);
+		
+		int day = 1;
+		Car car = new Car();
+		car.setColor("grey");
+		car.setMake("ford");
+		car.setModel("escape"); 
+		
+		Person person = new Person();
+		person.setName("Suan Fofana");
+		person.setAge(25);
+		person.setHeight("5 foot 10 inches");
+		person.setCar(car);
+		
+		switch(day) {
+		case 1:
+			System.out.println("Monday");
+			break;
+		case 2":
+			System.out.println("Tuesday");
+			break;
+		default:
+			System.out.println("no day");
+			break;
+		}
+		
+		if(person.getAge() == 27 && person.getName().equals("Sufyan Fofana")) {
+			System.out.println("pesrons is 27");
+		} else if(person.getAge() < 27 && person.getName().equals("Sufyan Fofana")) {
+			System.out.println("pesrons name is not 27");
+			System.out.println(person.getName());
+		} else {
+			System.out.println("nothing");
+		}
+		System.out.println(person.toString());		
+		
+		Person person2 = new Person();
+		person2.setName("Alhaji Fofana");
+		person2.setAge(23);
+		person2.setHeight("6 foot 4 inches");
+		System.out.println(person2.toString());
+
+	}
+
+}

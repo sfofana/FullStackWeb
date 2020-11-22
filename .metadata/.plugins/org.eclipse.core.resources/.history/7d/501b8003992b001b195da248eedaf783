@@ -1,0 +1,7 @@
+package com.app.demo.model;
+
+public class Laptop {
+
+	private String brand;
+	private String model;
+}
