@@ -1,7 +1,14 @@
 package com.app.demo.model;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table
 public class Laptop {
 
+	@Id
 	private String brand;
 	private String model;
 		

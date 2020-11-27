@@ -8,6 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import com.app.demo.model.Laptop;
 import com.app.demo.repo.Repository;
+import com.app.demo.service.AnimalService;
 
 @SpringBootApplication
 public class DataStructureApplication {
@@ -49,6 +50,10 @@ public class DataStructureApplication {
 		}
 		
 		map.entrySet().forEach(laptop -> System.out.println(laptop.getValue().getBrand()));
+		
+		AnimalService animalService = new AnimalService();
+		animalService.makeCatMeowAndWalk();
+		animalService.makeDogBarkAndWalk();
 	}
 
 }
