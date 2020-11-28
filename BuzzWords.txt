@@ -1,0 +1,47 @@
+Buzz Words
+Full-Stack
+Web Development
+Front-end & Back-end development
+Database
+Java, C#, Python, NodeJS
+API
+HTML
+CSS
+Javascript
+JDK
+JRE
+IDE
+Git version version control
+SSH 
+Relational Database and Non Relational
+UI user interface
+Business logic
+Static keyword
+Entry point main
+Object oriented programming (OOP)
+Plain Old Java Object (POJO)
+Access modifiers (private, protected, public)
+Class
+Instansiate
+Exception handling 
+Syntax
+Data structures, list, map, set
+Repository
+Inheritance
+Overriding/ overloading (polymorphism)
+Interface
+SQL
+DDL
+Relational Database
+Primary key, foreign keys
+Inner join, left right join, full join
+Java Spring framework
+Spring Data jpa/ hibernate
+Spring web 
+Hibernate Object Relational Mapping(ORM)
+Spring annotations
+Server
+Entity
+Repository/Data access object (DAO)
+Dependency Injection
+Beans
