@@ -22,23 +22,24 @@ public class DatabaseApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		try {
-			Thread.sleep(20000);
-		} catch (InterruptedException e) {
-			System.out.println(e);
-		}
+		Thread.sleep(30000);
 		
-		User u1 = userService.getUserWithId(355);
-		System.out.println("user 1 info === " +u1.toString());
+		User u1 = userService.getUserWithId(364);
+		System.out.println("user name === "+ u1.getFirstname());
+		System.out.println("user info === "+ u1.toString());
 		
-		User u2 = userService.getUserWithEmail("fbidwell5w@fda.gov");
-		System.out.println("user 2 info === " +u2.toString());
-
-		User u3 = userService.getUserWithFirstname("Claudio");
-		System.out.println("user 3 info === " +u3.toString());
+		User u2 = userService.getUserWithEmail("jboswood19@abc.net.au");
+		System.out.println("user name === "+ u2.getFirstname());
+		System.out.println("user info === "+ u2.toString());
+		
+		User u3 = userService.getUserWithFirstname("Rosalind");
+		System.out.println("user name === "+ u3.getFirstname());
+		System.out.println("user info === "+ u3.toString());
 		
 		List<User> users = userService.getAllUsers();
-		users.forEach(user -> System.out.println("user info === " +user.toString()));
+		users.stream().forEach(user -> {
+			System.out.println("user info === "+ user.toString());
+		});
 	}
 
 }

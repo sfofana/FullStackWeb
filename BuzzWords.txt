@@ -45,3 +45,10 @@ Entity
 Repository/Data access object (DAO)
 Dependency Injection
 Beans
+Create read update delete (CRUD)
+Representation state transfer (REST)
+Javascript object notation (JSON)
+Javascript
+Http protocol, xhr request, respose
+Http methods Get, Post, Put, Patch, Delete, Options, Headers
+http status 200, 201, 404, 500

@@ -1,0 +1,15 @@
+insert into Animal (name, scientific_Name, age, birthday) values ('Chameleon (unidentified)', 'Chamaelo sp.', 7, '11/8/2009');
+insert into Animal (name, scientific_Name, age, birthday) values ('Horned lark', 'Eremophila alpestris', 20, '1/21/2013');
+insert into Animal (name, scientific_Name, age, birthday) values ('Lizard, desert spiny', 'Sceloporus magister', 4, '3/13/2009');
+insert into Animal (name, scientific_Name, age, birthday) values ('Crocodile, nile', 'Crocodylus niloticus', 6, '12/8/2006');
+insert into Animal (name, scientific_Name, age, birthday) values ('Lava gull', 'Larus fuliginosus', 10, '1/30/2017');
+insert into Animal (name, scientific_Name, age, birthday) values ('Ferret, black-footed', 'Mustela nigripes', 5, '12/9/2003');
+insert into Animal (name, scientific_Name, age, birthday) values ('Plover, three-banded', 'Charadrius tricollaris', 5, '1/2/2009');
+insert into Animal (name, scientific_Name, age, birthday) values ('Brocket, red', 'Mazama americana', 20, '8/9/2015');
+insert into Animal (name, scientific_Name, age, birthday) values ('Asiatic jackal', 'Canis aureus', 7, '11/28/2005');
+insert into Animal (name, scientific_Name, age, birthday) values ('Barbet, crested', 'Trachyphonus vaillantii', 2, '11/19/2018');
+insert into Animal (name, scientific_Name, age, birthday) values ('Albatross, galapagos', 'Diomedea irrorata', 7, '3/6/2016');
+insert into Animal (name, scientific_Name, age, birthday) values ('Marten, american', 'Martes americana', 14, '8/22/2020');
+insert into Animal (name, scientific_Name, age, birthday) values ('Indian leopard', 'Panthera pardus', 7, '8/19/2016');
+insert into Animal (name, scientific_Name, age, birthday) values ('Sloth, pale-throated three-toed', 'Bradypus tridactylus', 1, '5/11/2002');
+insert into Animal (name, scientific_Name, age, birthday) values ('Lava gull', 'Larus fuliginosus', 2, '9/28/2020');
