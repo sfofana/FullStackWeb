@@ -1,7 +1,0 @@
-package com.app.demo.ex;
-
-public class Person {
-
-	String name = "Sufyan";
-	int age = 27;
-}

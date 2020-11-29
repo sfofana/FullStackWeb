@@ -41,7 +41,9 @@ public class AnimalService {
 	/** Delete Animal logic
 	 * @param animal
 	 */
-	public void deleteAnimal(Animal animal) {
+	public void deleteAnimal(String name) {
+		Animal animal = new Animal();
+		animal.setName(name);
 		repo.delete(animal);
 	}
 	

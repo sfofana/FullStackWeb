@@ -22,7 +22,7 @@ public class AnimalController {
 	@Autowired
 	AnimalService service;
 	
-	@PostMapping("add")
+	@PostMapping("create")
 	public Animal addAnimal(@RequestBody Animal animal) {
 		return service.addAnimal(animal);
 	}
@@ -37,9 +37,9 @@ public class AnimalController {
 		return service.updateAnimal(animal);
 	}
 	
-	@DeleteMapping("delete")
-	public void deleteAnimal(@RequestBody Animal animal) {
-		service.deleteAnimal(animal);
+	@DeleteMapping("delete/{name}")
+	public void deleteAnimal(@PathVariable("name") String name) {
+		service.deleteAnimal(name);
 	}
 	
 	@GetMapping("all")

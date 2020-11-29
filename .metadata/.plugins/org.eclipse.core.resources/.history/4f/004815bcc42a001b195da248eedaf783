@@ -1,8 +1,0 @@
-package com.app.demo.ex;
-
-public class Car {
-
-	private String make;
-	private String model;
-	private String color;
-}

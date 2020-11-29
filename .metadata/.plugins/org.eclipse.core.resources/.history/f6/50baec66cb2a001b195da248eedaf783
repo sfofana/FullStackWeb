@@ -1,8 +1,0 @@
-package com.app.demo.ex;
-
-public class Condition {
-
-	public boolean isOlderThan(Person person, int targetAge) {
-		
-	}
-}

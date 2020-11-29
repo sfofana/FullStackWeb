@@ -48,7 +48,27 @@ Beans
 Create read update delete (CRUD)
 Representation state transfer (REST)
 Javascript object notation (JSON)
+Key value pair
 Javascript
 Http protocol, xhr request, respose
 Http methods Get, Post, Put, Patch, Delete, Options, Headers
 http status 200, 201, 404, 500
+nodejs(javascritpt outside browser)
+esm2015
+typescript (superset)
+npm
+loosely typed
+angular 11 framework
+Observable
+ngOninit, ngOnDestroy, ngOnChange
+Angular lifcycles
+
+**Angular Commands**
+npm install @angular/cli
+ng new animalApp
+cd ./animalApp
+ng s
+http://localhost:4200/
+ng g c componentName
+ng g s serviceName
+ng g class className
