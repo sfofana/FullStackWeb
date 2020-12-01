@@ -72,3 +72,4 @@ http://localhost:4200/
 ng g c componentName
 ng g s serviceName
 ng g class className
+ng g interface interfaceName
