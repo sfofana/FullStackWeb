@@ -1,1 +1,58 @@
-<p>home works!</p>
+<div class="search">
+    <input type="text" [(ngModel)]="searchName"/>
+    <button (click)="searchAnimal()">Search</button>
+</div>
+
+<div *ngIf="animal" class="results">
+    <h5>Serach results...</h5>
+    <table>
+        <tr>
+          <th>Name</th>
+          <th>Scientific Name</th>
+          <th>Age</th>
+          <th>Birthday</th>
+        </tr>
+        <tr>
+          <td>{{animal.name}}</td>
+          <td>{{animal.scientificName}}</td>
+          <td>{{animal.age}}</td>
+          <td>{{animal.birthday}}</td>
+        </tr>
+      </table>
+</div>
+
+<div class="all">
+    <table>
+        <tr>
+          <th>Name</th>
+          <th>Scientific Name</th>
+          <th>Age</th>
+          <th>Birthday</th>
+        </tr>
+        <tr *ngFor="let anml of animals">
+          <td>{{anml.name}}</td>
+          <td>{{anml.scientificName}}</td>
+          <td>{{anml.age}}</td>
+          <td>{{anml.birthday}}</td>
+        </tr>
+      </table>
+</div>
+
+<div class="add">
+    <table>
+        <tr>
+            <td><input type="text" [(ngModel)]="newAnimal.name" placeholder="Name"/></td>
+        </tr>
+        <tr>
+            <td><input type="text" [(ngModel)]="newAnimal.scientificName" placeholder="Scientific Name"/></td>
+        </tr>
+        <tr>
+            <td><input type="text" [(ngModel)]="newAnimal.age" placeholder="Age"/></td>
+        </tr>
+        <tr>
+            <td><input type="text" [(ngModel)]="newAnimal.birthday" placeholder="Birthday"/></td>
+        </tr>
+      </table>
+      <button (click)="addAnimal()">Add</button>
+      <button (click)="updateAnimal()">Edit</button>
+</div>

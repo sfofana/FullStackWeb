@@ -13,36 +13,43 @@ public class Animal {
 	private String scientificName;
 	private int age;
 	private String birthday;
-	
+
 	public String getName() {
-		return name;
+		return this.name;
 	}
+
 	public void setName(String name) {
 		this.name = name;
 	}
+
 	public String getScientificName() {
-		return scientificName;
+		return this.scientificName;
 	}
+
 	public void setScientificName(String scientificName) {
 		this.scientificName = scientificName;
 	}
+
 	public int getAge() {
-		return age;
+		return this.age;
 	}
+
 	public void setAge(int age) {
 		this.age = age;
 	}
+
 	public String getBirthday() {
-		return birthday;
+		return this.birthday;
 	}
+
 	public void setBirthday(String birthday) {
 		this.birthday = birthday;
 	}
-	
+
 	@Override
 	public String toString() {
-		return "Animal [name=" + name + ", scientificName=" + scientificName + ", age=" + age + ", birthday=" + birthday
-				+ "]";
+		return "{" + " name='" + getName() + "'" + ", scientificName='" + getScientificName() + "'" + ", age='"
+				+ getAge() + "'" + ", birthday='" + getBirthday() + "'" + "}";
 	}
-	
+
 }

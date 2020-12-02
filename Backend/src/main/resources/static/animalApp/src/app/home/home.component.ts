@@ -19,6 +19,7 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.animal = null;
     this.newAnimal = new Animal();
+    this.loadData();
   }
 
   loadData() {
@@ -43,8 +44,8 @@ export class HomeComponent implements OnInit {
     );
   }
 
-  updateAnimal(animal: Animal) {
-    this.service.updateAnimal(animal).subscribe(
+  updateAnimal() {
+    this.service.updateAnimal(this.newAnimal).subscribe(
       data => console.dir(data),
       error => console.log(error),
       () => this.loadData()

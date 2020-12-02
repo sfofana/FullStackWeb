@@ -1,0 +1,15 @@
+Bank Application
+•	User can register with default checking and savings account 4pts
+•	User can login to account using credentials 3pts
+•	User can apply for accounts and credit cards 2pts
+•	User can be approved for credit card if credit score 600 or greater 1pts
+•	Users credit score is randomly generated to simulate a credit check 1pts
+•	User can deposit money to any of their accounts 1pts
+•	User can withdraw money to any of their accounts 1pts
+•	User can transfer funds to any account 2pts
+•	User can charge credit card 1pts
+•	User can make a payment towards credit card 1pts
+•	User cannot deposit negative money 1pts
+•	User can logout 3pts
+
+
