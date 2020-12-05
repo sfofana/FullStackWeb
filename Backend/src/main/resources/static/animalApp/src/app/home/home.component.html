@@ -27,9 +27,9 @@
             <td><input type="text" [(ngModel)]="newAnimal.age" placeholder="Age"/></td>
         </tr>
         <tr>
-            <td><input type="text" [(ngModel)]="newAnimal.birthday" placeholder="Birthday"/></td>
+            <td><input type="text" [(ngModel)]="newAnimal.birthday" placeholder="Birthday" (keyup.enter)="addAnimal()"/></td>
         </tr>
       </table>
-      <button (click)="addAnimal()">Add</button>
+      <a (click)="addAnimal()" class="w3-button w3-circle w3-large w3-black"><i class="fa fa-plus"></i></a>
       <button (click)="updateAnimal()">Edit</button>
 </div>

@@ -1,5 +1,5 @@
 <div class="search">
-    <input type="text" [(ngModel)]="searchName"/>
+    <input type="text" [(ngModel)]="searchName" (keyup.enter)="searchAnimal()"/>
     <button (click)="searchAnimal()">Search</button>
 </div>
 
