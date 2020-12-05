@@ -1,26 +1,3 @@
-<div class="search">
-    <input type="text" [(ngModel)]="searchName"/>
-    <button (click)="searchAnimal()">Search</button>
-</div>
-
-<div *ngIf="animal" class="results">
-    <h5>Serach results...</h5>
-    <table>
-        <tr>
-          <th>Name</th>
-          <th>Scientific Name</th>
-          <th>Age</th>
-          <th>Birthday</th>
-        </tr>
-        <tr>
-          <td>{{animal.name}}</td>
-          <td>{{animal.scientificName}}</td>
-          <td>{{animal.age}}</td>
-          <td>{{animal.birthday}}</td>
-        </tr>
-      </table>
-</div>
-
 <div class="all">
     <table>
         <tr>
