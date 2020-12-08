@@ -2,13 +2,13 @@ package com.example.demo;
 
 import java.util.List;
 
+import com.example.demo.model.User;
+import com.example.demo.service.UserService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-
-import com.example.demo.model.User;
-import com.example.demo.service.UserService;
 
 @SpringBootApplication
 public class DatabaseApplication implements CommandLineRunner {

@@ -39,6 +39,7 @@ Java Spring framework
 Spring Data jpa/ hibernate
 Spring web 
 Hibernate Object Relational Mapping(ORM)
+trigger (sql functions)
 Spring annotations
 Server
 Entity
