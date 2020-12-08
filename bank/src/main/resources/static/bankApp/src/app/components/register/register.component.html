@@ -1,0 +1,39 @@
+<div class="w3-half">
+    <div class="w3-container w3-card-4">
+        <h2>Join our banking services</h2>       
+        <div class="w3-section">
+            <input [(ngModel)]="holder.firstname" class="w3-input" type="text" required>
+            <i class="fa fa-envelope" style="width:30px"> </i><label>Firstname</label>
+        </div>
+        <div class="w3-section">
+            <input [(ngModel)]="holder.lastname" class="w3-input" type="text" required>
+            <i class="fa fa-lock" style="width:30px"> </i><label>Lastname</label>
+        </div>
+        <div class="w3-section">
+            <input [(ngModel)]="holder.dob" class="w3-input" type="text" required>
+            <i class="fa fa-envelope" style="width:30px"> </i><label>Date of birth</label>
+        </div>
+        <div class="w3-section">
+            <input [(ngModel)]="holder.address" class="w3-input" type="text" required>
+            <i class="fa fa-lock" style="width:30px"> </i><label>Address</label>
+        </div>
+        <div class="w3-section">
+            <input [(ngModel)]="holder.ssn" class="w3-input" type="text" required>
+            <i class="fa fa-lock" style="width:30px"> </i><label>Social-Security #</label>
+        </div>
+        <div class="w3-section">
+            <input [(ngModel)]="holder.email" class="w3-input" type="text" required>
+            <i class="fa fa-envelope" style="width:30px"> </i><label>Email</label>
+        </div>
+        <div class="w3-section">
+            <input [(ngModel)]="holder.password" class="w3-input" type="text" required>
+            <i class="fa fa-lock" style="width:30px"> </i><label>Password</label>
+        </div>
+        <div *ngIf="message" class="w3-section">
+            <p>{{message}}</p>
+        </div>
+        <div class="w3-section">
+            <button type="button" (click)="register()" class="w3-button w3-red w3-margin-top">REGISTER</button>
+        </div>
+    </div>
+</div>
