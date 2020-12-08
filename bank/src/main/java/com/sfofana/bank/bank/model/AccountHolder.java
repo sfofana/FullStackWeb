@@ -2,16 +2,24 @@ package com.sfofana.bank.bank.model;
 
 import java.util.List;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+
 @Entity
 @Table
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 public class AccountHolder {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String firstname;
     private String lastname;
@@ -20,16 +28,19 @@ public class AccountHolder {
     private Integer ssn;
     private boolean loggedin;
     private String activeDate;
+    private Integer creditScore;
+    @Column(unique = true)
     private String email;
     private String password;
-    @OneToMany
+    @OneToMany(mappedBy = "holder")
     private List<Account> accounts;
 
     public AccountHolder() {
     }
 
     public AccountHolder(Integer id, String firstname, String lastname, String dob, String address, Integer ssn,
-            boolean loggedin, String activeDate, String email, String password, List<Account> accounts) {
+            boolean loggedin, String activeDate, Integer creditScore, String email, String password,
+            List<Account> accounts) {
         this.id = id;
         this.firstname = firstname;
         this.lastname = lastname;
@@ -38,6 +49,7 @@ public class AccountHolder {
         this.ssn = ssn;
         this.loggedin = loggedin;
         this.activeDate = activeDate;
+        this.creditScore = creditScore;
         this.email = email;
         this.password = password;
         this.accounts = accounts;
@@ -109,6 +121,14 @@ public class AccountHolder {
 
     public void setActiveDate(String activeDate) {
         this.activeDate = activeDate;
+    }
+
+    public Integer getCreditScore() {
+        return this.creditScore;
+    }
+
+    public void setCreditScore(Integer creditScore) {
+        this.creditScore = creditScore;
     }
 
     public String getEmail() {

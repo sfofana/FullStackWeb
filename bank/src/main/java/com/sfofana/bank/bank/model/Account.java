@@ -1,15 +1,25 @@
 package com.sfofana.bank.bank.model;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.SequenceGenerators;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 @Entity
 @Table
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "number")
+@SequenceGenerator(name = "sequence", initialValue = 10010000)
 public class Account {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY, generator = "sequence")
     private Integer number;
     private String name;
     private boolean credit;

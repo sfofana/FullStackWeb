@@ -1,6 +1,7 @@
 package com.sfofana.bank.bank.controller;
 
 import com.sfofana.bank.bank.model.AccountHolder;
+import com.sfofana.bank.bank.model.lookup.MoneyFlow;
 import com.sfofana.bank.bank.service.UserService;
 import com.sfofana.bank.bank.transfer.Profile;
 import com.sfofana.bank.bank.transfer.Transaction;
@@ -12,7 +13,6 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.bind.annotation.PathVariable;
 
 @RestController
 @CrossOrigin(origins = "*")
@@ -44,12 +44,12 @@ public class UserController {
 
     @PutMapping("deposit")
     public AccountHolder deposit(@RequestBody Transaction transaction) {
-        return service.processTransaction(transaction, UserService.Deposit);
+        return service.processTransaction(transaction, MoneyFlow.DEPOSIT);
     }
 
     @PutMapping("withdraw")
     public AccountHolder withdraw(@RequestBody Transaction transaction) {
-        return service.processTransaction(transaction, UserService.Withdraw);
+        return service.processTransaction(transaction, MoneyFlow.WITHDRAW);
     }
 
     @PutMapping("transfer")

@@ -7,6 +7,7 @@ public class Transaction {
     private String accountName;
     private Double amount;
     private boolean credit;
+    private String transferAccount;
     private String receiverEmail;
 
     public Integer getHolderId() {
@@ -51,6 +52,14 @@ public class Transaction {
 
     public void setCredit(boolean credit) {
         this.credit = credit;
+    }
+
+    public String getTransferAccount() {
+        return this.transferAccount;
+    }
+
+    public void setTransferAccount(String transferAccount) {
+        this.transferAccount = transferAccount;
     }
 
     public String getReceiverEmail() {

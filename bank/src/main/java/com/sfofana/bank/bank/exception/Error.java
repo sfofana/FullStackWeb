@@ -1,16 +1,18 @@
 package com.sfofana.bank.bank.exception;
 
+import java.util.Date;
+
 public class Error {
 
     private String message;
-    private String details;
+    private Date timestamp;
 
     public Error() {
     }
 
-    public Error(String message, String details) {
+    public Error(String message, Date timestamp) {
         this.message = message;
-        this.details = details;
+        this.timestamp = timestamp;
     }
 
     public String getMessage() {
@@ -21,12 +23,12 @@ public class Error {
         this.message = message;
     }
 
-    public String getDetails() {
-        return this.details;
+    public Date getTimestamp() {
+        return this.timestamp;
     }
 
-    public void setDetails(String details) {
-        this.details = details;
+    public void setTimestamp(Date timestamp) {
+        this.timestamp = timestamp;
     }
 
 }
