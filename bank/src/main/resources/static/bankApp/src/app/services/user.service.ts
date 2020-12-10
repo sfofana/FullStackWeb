@@ -22,6 +22,10 @@ export class UserService {
     return this.http.post<AccountHolder>(`${environment.baseUrl}/${environment.loginUrl}`, profile);
   }
 
+  public logout(profile: Profile): Observable<AccountHolder> {
+    return this.http.post<AccountHolder>(`${environment.baseUrl}/${environment.logoutUrl}`, profile);
+  }
+
   public applyForAccount(transaction: Transaction): Observable<AccountHolder> {
     return this.http.post<AccountHolder>(`${environment.baseUrl}/${environment.applyUrl}`, transaction);
   }

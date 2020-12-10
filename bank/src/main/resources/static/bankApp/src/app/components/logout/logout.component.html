@@ -1,1 +1,8 @@
-<p>logout works!</p>
+<div class="w3-center">
+    <div class="w3-container w3-card-4">
+        <h4>Are you sure you want to sign out, {{profile.firstname}} {{profile.lastname}}</h4>
+        <div class="w3-section">
+            <button type="button" (click)="logout()" class="w3-button w3-grey w3-margin-top"><i class="fa fa-check fa-fw w3-margin-right w3-large w3-text-green"></i> Yes</button>
+        </div>
+    </div>
+</div>
