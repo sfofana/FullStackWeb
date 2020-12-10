@@ -1,22 +1,22 @@
 <!-- Header -->
-<header class="w3-display-container w3-content w3-hide-small" style="max-width:1500px">
+<header class="w3-display-container w3-content" style="max-width:90%">
   <img class="w3-image" src="assets/images/building.jpg" alt="London" width="1500" height="700">
   <div class="w3-display-middle" style="width:65%">
     <div class="w3-bar w3-black">
-      <button class="w3-bar-item w3-button tablink" routerLink="/home"><i
+      <button *ngIf="!holder.loggedin" class="w3-bar-item w3-button tablink" routerLink="/home"><i
           class="fa fa-plane w3-margin-right"></i>LOGIN</button>
-      <button class="w3-bar-item w3-button tablink" routerLink="/register"><i
+      <button *ngIf="!holder.loggedin" class="w3-bar-item w3-button tablink" routerLink="/register"><i
           class="fa fa-bed w3-margin-right"></i>REGISTER</button>
-      <button class="w3-bar-item w3-button tablink" routerLink="/dashboard"><i
+      <button *ngIf="holder.loggedin" class="w3-bar-item w3-button tablink" routerLink="/dashboard"><i
           class="fa fa-car w3-margin-right"></i>DASHBOARD</button>
-      <button class="w3-bar-item w3-button tablink" routerLink="/profile"><i
+      <button *ngIf="holder.loggedin" class="w3-bar-item w3-button tablink" routerLink="/profile"><i
           class="fa fa-car w3-margin-right"></i>PROFILE</button>
-      <button class="w3-bar-item w3-button tablink" routerLink="/logout"><i
+      <button *ngIf="holder.loggedin" class="w3-bar-item w3-button tablink" routerLink="/logout"><i
           class="fa fa-car w3-margin-right"></i>SIGN-OUT</button>
     </div>
 
     <!-- Tabs -->
-    <div id="Flight" class="w3-container w3-white w3-padding-16 myLink">
+    <div class="w3-container w3-white w3-padding-16 myLink">
       <router-outlet></router-outlet>
     </div>
 

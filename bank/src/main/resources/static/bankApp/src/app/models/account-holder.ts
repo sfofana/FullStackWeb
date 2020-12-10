@@ -1,3 +1,5 @@
+import { Account } from './account';
+
 export interface AccountHolder {
     id: number;
     firstname: string;

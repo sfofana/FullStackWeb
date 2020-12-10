@@ -32,6 +32,11 @@ public class UserController {
         return service.login(profile);
     }
 
+    @PostMapping("logout")
+    public AccountHolder logout(@RequestBody Profile profile) {
+        return service.logout(profile);
+    }
+
     @PostMapping("apply")
     public AccountHolder applyForAccount(@RequestBody Transaction transaction) {
         return service.addAccount(transaction);

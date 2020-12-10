@@ -1,8 +1,8 @@
-import { AccountHolder } from '../../models/account-holder';
 import { UserService } from '../../services/user.service';
 import { ValidationService } from '../../services/validation.service';
-import { register } from 'ts-node';
 import { Profile } from '../../models/profile';
+import { SubjectService } from '../../services/subject.service';
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -15,14 +15,17 @@ export class HomeComponent implements OnInit {
   profile: Profile = {} as Profile;
   message: string;
 
-  constructor(private service: UserService, private validation: ValidationService) { }
+  constructor(private service: UserService, private validation: ValidationService, private memory: SubjectService, private router: Router) { }
 
   ngOnInit(): void {
   }
 
   login() {
     this.service.login(this.profile).subscribe(
-      data => console.log(data),
+      data => {
+      this.memory.setSession(data);
+      this.router.navigate(['dashboard']);
+    },
       error => this.message = error.message,
       () => this.reset()
     );

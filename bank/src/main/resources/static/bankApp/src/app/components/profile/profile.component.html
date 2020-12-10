@@ -1,26 +1,49 @@
-   <!-- Left Column -->
-   <div class="w3-center">
-    
-    <div class="w3-white w3-text-grey w3-card-4">
-      <div class="w3-display-container">
-        <img src="assets/images/profile.png" style="width:30%" alt="Avatar">
-        <div class="w3-display-bottomleft w3-container w3-text-black">
-          <h4>{{holder.firstname}} {{holder.lastname}}, active since {{holder.activeDate}}</h4>
-        </div>
-      </div>
-      <div class="w3-container">
-        <p><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-teal"></i>{{holder.dob}}</p>
-        <p><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-teal"></i>{{holder.address}}</p>
-        <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal"></i>{{holder.email}}</p>
-        <p><i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-teal"></i>1224435534</p>
-        <hr>
+<!-- Left Column -->
+<div class="w3-center">
 
-        <p class="w3-large"><b><i class="fa fa-asterisk fa-fw w3-margin-right w3-text-teal"></i>Credit</b></p>
-        <p>Score</p>
-        <div class="w3-light-grey w3-round-xlarge w3-small">
-          <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:50%">{{holder.creditScore}}</div>
-        </div>
-        <br>
-        <br>
+  <div class="w3-white w3-text-grey w3-card-4">
+    <div class="w3-display-container">
+      <img src="assets/images/profile.png" style="width:30%" alt="Avatar">
+      <div class="w3-display-bottomleft w3-container w3-text-black">
+        <h4>{{holder.firstname}} {{holder.lastname}}, active since {{holder.activeDate}}</h4>
       </div>
-    </div><br>
+    </div>
+    <div class="w3-container">
+      <div *ngIf="edit" class="w3-half">
+        <input [(ngModel)]="profile.firstname" class="w3-input" type="text" required>
+        <i class="fa fa-envelope" style="width:30px"> </i><label>First Name</label>
+      </div>
+      <div *ngIf="edit" class="w3-half">
+        <input [(ngModel)]="profile.lastname" class="w3-input" type="text" required>
+        <i class="fa fa-lock" style="width:30px"> </i><label>Last Name</label>
+      </div>
+      <p class="w3-section">
+        <i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-teal"></i>
+        <span *ngIf="!edit">{{holder.dob}}</span>
+        <span *ngIf="edit"><input [(ngModel)]="profile.dob" class="w3-input" type="text" required></span>
+      </p>
+      <p>
+        <i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-teal"></i>
+        <span *ngIf="!edit">{{holder.address}}</span>
+        <span *ngIf="edit"><input [(ngModel)]="profile.address" class="w3-input" type="text" required></span>
+      </p>
+      <p>
+        <i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal"></i>
+        <span *ngIf="!edit">{{holder.email}}</span>
+        <span *ngIf="edit"><input [(ngModel)]="profile.email" class="w3-input" type="text" required></span>
+      </p>
+      <p *ngIf="!edit"><i class="fa fa-edit fa-fw w3-margin-right w3-large w3-text-blue" (click)="toggle('edit')"></i>
+      </p>
+      <p *ngIf="edit"><i class="fa fa-check fa-fw w3-margin-right w3-large w3-text-green" (click)="toggle('exit'); saveProfile()"></i>
+        <i class="fa fa-times-circle fa-fw w3-margin-right w3-large w3-text-red" (click)="toggle('exit'); cancelProfile()"></i></p>
+      <hr>
+
+      <p class="w3-large"><b><i class="fa fa-asterisk fa-fw w3-margin-right w3-text-teal"></i>Credit</b></p>
+      <p>Score</p>
+      <div class="w3-light-grey w3-round-xlarge w3-small">
+        <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:50%">{{holder.creditScore}}</div>
+      </div>
+      <br>
+      <br>
+    </div>
+  </div><br>

@@ -34,8 +34,8 @@ public class UserService {
         try {
             holder.setActiveDate(DateUtils.dateToString(new Date()));
             holder.setCreditScore(creditCheck());
+            holder.setLoggedin(true);
             AccountHolder newHolder = holderRepo.save(holder);
-            System.out.println(MoneyFlow.CHECKING.fromDescription());
             Account checking = new Account(null, MoneyFlow.CHECKING.fromDescription(), false, 0.0, newHolder);
             Account saving = new Account(null, MoneyFlow.SAVING.fromDescription(), false, 0.0, newHolder);
             List<Account> defaultAccounts = List.of(checking, saving);
@@ -72,8 +72,14 @@ public class UserService {
         } else if (!holder.getPassword().equals(profile.getPassword())) {
             throw new BusinessException("Invalid credentials");
         }
+        holder.setLoggedin(true);
+        return holderRepo.save(holder);
+    }
 
-        return holder;
+    public AccountHolder logout(Profile profile) throws BusinessException {
+        AccountHolder holder = holderRepo.findByEmail(profile.getEmail());
+        holder.setLoggedin(false);
+        return holderRepo.save(holder);
     }
 
     public AccountHolder editProfile(Profile profile) {
@@ -122,8 +128,8 @@ public class UserService {
         List<Account> accounts = new ArrayList<>();
 
         if (transaction.getReceiverEmail() != null) {
-            AccountHolder reciever = holderRepo.findByEmail(transaction.getReceiverEmail());
-            reciever.getAccounts().stream().forEach(account -> {
+            AccountHolder receiver = holderRepo.findByEmail(transaction.getReceiverEmail());
+            receiver.getAccounts().stream().forEach(account -> {
                 if (account.getName().equals(MoneyFlow.CHECKING.fromDescription())) {
                     double amount = NumberUtils.addDouble(account.getBalance(), transaction.getAmount());
                     account.setBalance(amount);

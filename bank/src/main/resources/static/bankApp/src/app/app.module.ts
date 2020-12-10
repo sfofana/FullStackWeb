@@ -12,6 +12,7 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { RegisterComponent } from './components/register/register.component';
 import { LogoutComponent } from './components/logout/logout.component';
+import { SubjectService } from './services/subject.service';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { LogoutComponent } from './components/logout/logout.component';
   ],
   providers: [
     UserService,
-    ValidationService
+    ValidationService,
+    SubjectService
   ],
   bootstrap: [AppComponent]
 })
