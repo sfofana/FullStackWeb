@@ -14,6 +14,7 @@ export class HomeComponent implements OnInit {
 
   profile: Profile = {} as Profile;
   message: string;
+  validEmail: boolean = true;
 
   constructor(private service: UserService, private validation: ValidationService, private memory: SubjectService, private router: Router) { }
 
@@ -29,6 +30,10 @@ export class HomeComponent implements OnInit {
       error => this.message = error.message,
       () => this.reset()
     );
+  }
+
+  validateEamil(){
+    this.validEmail = this.validation.validateEmail(this.profile.email);
   }
 
   reset() {

@@ -6,4 +6,9 @@ import { Injectable } from '@angular/core';
 export class ValidationService {
 
   constructor() { }
+
+  public validateEmail(email: string): boolean {
+    var pattern = /\S+@\S+\.\S+/;
+    return pattern.test(email);
+  }
 }
