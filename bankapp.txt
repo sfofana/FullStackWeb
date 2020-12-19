@@ -12,4 +12,6 @@ Bank Application
 •	User cannot deposit negative money 1pts
 •	User can logout 3pts
 
+Technologies: Angular 9, Spring Boot, H2 Datatbase
+
 
