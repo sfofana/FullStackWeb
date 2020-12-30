@@ -14,6 +14,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.mail.MessagingException;
+import java.io.IOException;
+
 @RestController
 @CrossOrigin(origins = "*")
 @RequestMapping("/api/v1")
@@ -23,7 +26,7 @@ public class UserController {
     UserService service;
 
     @PostMapping("register")
-    public AccountHolder register(@RequestBody AccountHolder holder) {
+    public AccountHolder register(@RequestBody AccountHolder holder) throws IOException, MessagingException {
         return service.register(holder);
     }
 

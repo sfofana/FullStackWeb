@@ -16,6 +16,7 @@ import { Router } from '@angular/router';
 export class DashboardComponent implements OnInit {
 
   holder: AccountHolder = {} as AccountHolder;
+  tempHolder: AccountHolder = {} as AccountHolder;
   profile: Profile = {} as Profile;
   transaction: Transaction = {} as Transaction;
   creditAccounts: Account[] = [];
@@ -33,28 +34,8 @@ export class DashboardComponent implements OnInit {
     this.memory.session.subscribe(
       data => {
         this.holder = data;
-        if (data.accounts)
-          data.accounts.forEach(account => {
-            if (account.credit)
-              this.creditAccounts.push(account);
-            else
-              this.bankkingAccounts.push(account);
-          });
-      },
-      error => this.message = error.error.message
-    );
-  }
-
-  getInfo() {
-    this.profile.email = this.holder.email;
-    this.profile.password = this.holder.password;
-    this.service.login(this.profile).subscribe(
-      data => {
-        this.holder = data;
-        this.memory.setSession(data);
-      },
-      error => this.message = error.message,
-      () => this.reset()
+        this.reset();
+      }
     );
   }
 
@@ -88,6 +69,16 @@ export class DashboardComponent implements OnInit {
     }
   }
 
+  setAccounts(holder: AccountHolder) {
+    if (holder.accounts)
+      holder.accounts.forEach(account => {
+        if (account.credit)
+          this.creditAccounts.push(account);
+        else
+          this.bankkingAccounts.push(account);
+      });
+  }
+
   selectTransaction(name: string) {
     this.transaction.holderId = this.holder.id;
     this.transaction.accountName = name;
@@ -100,31 +91,35 @@ export class DashboardComponent implements OnInit {
 
   depositMoney() {
     this.service.deposit(this.transaction).subscribe(
-      data => this.memory.setSession(data)
+      data => this.memory.setSession(data),
+      error => this.message = error.error.message,
+      () => this.reset()
     )
-    this.reset();
   }
 
   withdrawMoney() {
     this.service.withdraw(this.transaction).subscribe(
-      data => this.memory.setSession(data)
-    )
-    this.reset();
+      data => this.memory.setSession(data),
+      error => this.message = error.error.message,
+      () => this.reset()
+    );
   }
 
   transferMoney() {
     this.service.transfer(this.transaction).subscribe(
-      data => this.memory.setSession(data)
+      data => this.memory.setSession(data),
+      error => this.message = error.error.message,
+      () => this.reset()
     )
-    this.reset();
   }
 
   applyForAccount() {
     this.transaction.holderId = this.holder.id;
     this.service.applyForAccount(this.transaction).subscribe(
-      data => this.memory.setSession(data)
+      data => this.memory.setSession(data),
+      error => this.message = error.error.message,
+      () => this.reset()
     )
-    this.reset();
   }
 
   reset() {
@@ -133,5 +128,6 @@ export class DashboardComponent implements OnInit {
     this.creditAccounts = [];
     this.transaction = {} as Transaction;
     this.message = "";
+    this.setAccounts(this.holder);
   }
 }

@@ -13,7 +13,8 @@ export class SubjectService {
 
   private behavior = new BehaviorSubject<AccountHolder>(this.blankHolder);
 
-  public setSession(holder: AccountHolder){
+  public setSession(holder: AccountHolder) {
+    console.dir(holder)
     this.behavior.next(holder);
   }
 

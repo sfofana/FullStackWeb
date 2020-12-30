@@ -21,7 +21,7 @@ import { SubjectService } from './services/subject.service';
     ProfileComponent,
     DashboardComponent,
     RegisterComponent,
-    LogoutComponent
+    LogoutComponent,
   ],
   imports: [
     BrowserModule,

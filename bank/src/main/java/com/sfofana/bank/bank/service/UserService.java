@@ -1,5 +1,6 @@
 package com.sfofana.bank.bank.service;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -13,10 +14,13 @@ import com.sfofana.bank.bank.repository.AccountRepository;
 import com.sfofana.bank.bank.transfer.Profile;
 import com.sfofana.bank.bank.transfer.Transaction;
 import com.sfofana.bank.bank.util.DateUtils;
+import com.sfofana.bank.bank.util.EmailUtils;
 import com.sfofana.bank.bank.util.NumberUtils;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import javax.mail.MessagingException;
 
 @Service
 public class UserService {
@@ -26,7 +30,7 @@ public class UserService {
     @Autowired
     AccountRepository accountRepo;
 
-    public AccountHolder register(AccountHolder holder) throws BusinessException {
+    public AccountHolder register(AccountHolder holder) throws BusinessException, IOException, MessagingException {
         if (holder.getEmail() == null || holder.getSsn() < 100000000) {
             throw new BusinessException("Invalid request");
         }
@@ -46,7 +50,7 @@ public class UserService {
             else
                 throw new BusinessException("Internal server error.. Please contact for support");
         }
-
+        EmailUtils.email(holder.getEmail(), String.format("%s %s", holder.getFirstname(), holder.getLastname()));
         return holderRepo.findByEmail(holder.getEmail());
     }
 
