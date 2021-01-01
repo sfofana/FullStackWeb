@@ -8,13 +8,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  
   holder: AccountHolder = {} as AccountHolder;
-  
+
   constructor(private memory: SubjectService) { }
-  
+
   ngOnInit(): void {
     this.memory.session.subscribe(data => this.holder = data);
   }
-  
+
 }

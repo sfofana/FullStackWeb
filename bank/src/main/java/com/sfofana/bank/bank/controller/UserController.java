@@ -6,6 +6,8 @@ import com.sfofana.bank.bank.service.UserService;
 import com.sfofana.bank.bank.transfer.Profile;
 import com.sfofana.bank.bank.transfer.Transaction;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -21,17 +23,20 @@ import java.io.IOException;
 @CrossOrigin(origins = "*")
 @RequestMapping("/api/v1")
 public class UserController {
+    private static final Logger log = LoggerFactory.getLogger(UserController.class);
 
     @Autowired
     UserService service;
 
     @PostMapping("register")
     public AccountHolder register(@RequestBody AccountHolder holder) throws IOException, MessagingException {
+        log.info("user hit /register endpoint");
         return service.register(holder);
     }
 
     @PostMapping("login")
     public AccountHolder login(@RequestBody Profile profile) {
+        log.info("user hit /login endpoint");
         return service.login(profile);
     }
 

@@ -70,6 +70,11 @@ truly
 true 
 false
 directive
+Sonarqube/ Sonarcloud 
+code coverage 80%
+Junit 5
+Mockito
+MVC, Single-responsibility principle design pattern
 
 **Angular Commands**
 npm install @angular/cli

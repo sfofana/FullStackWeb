@@ -2,6 +2,7 @@ import { UserService } from '../../services/user.service';
 import { ValidationService } from '../../services/validation.service';
 import { Profile } from '../../models/profile';
 import { SubjectService } from '../../services/subject.service';
+import { AccountHolder } from '../../models/account-holder';
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
@@ -21,15 +22,18 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  login() {
+  login(): AccountHolder {
+    let holder: AccountHolder;
     this.service.login(this.profile).subscribe(
       data => {
       this.memory.setSession(data);
       this.router.navigate(['dashboard']);
+      holder = data;
     },
       error => this.message = error.message,
       () => this.reset()
     );
+    return holder;
   }
 
   validateEamil(){

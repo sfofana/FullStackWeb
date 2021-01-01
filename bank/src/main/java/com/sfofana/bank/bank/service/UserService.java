@@ -17,6 +17,8 @@ import com.sfofana.bank.bank.util.DateUtils;
 import com.sfofana.bank.bank.util.EmailUtils;
 import com.sfofana.bank.bank.util.NumberUtils;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -24,6 +26,7 @@ import javax.mail.MessagingException;
 
 @Service
 public class UserService {
+    private static final Logger log = LoggerFactory.getLogger(UserService.class);
 
     @Autowired
     AccountHolderRepository holderRepo;
@@ -31,7 +34,9 @@ public class UserService {
     AccountRepository accountRepo;
 
     public AccountHolder register(AccountHolder holder) throws BusinessException, IOException, MessagingException {
+        log.info("user is registering");
         if (holder.getEmail() == null || holder.getSsn() < 100000000) {
+            log.error("**CRITICAL ERROR** either email or ssn is null or invalid");
             throw new BusinessException("Invalid request");
         }
 
@@ -44,17 +49,22 @@ public class UserService {
             Account saving = new Account(null, MoneyFlow.SAVING.fromDescription(), false, 0.0, newHolder);
             List<Account> defaultAccounts = List.of(checking, saving);
             accountRepo.saveAll(defaultAccounts);
+            log.info("-->> default accounts are saved to data base <<--");
         } catch (Exception e) {
-            if (e.getLocalizedMessage().contains("EMAIL"))
+            if (e.getLocalizedMessage().contains("EMAIL")) {
+                log.error("email already exists in database");
                 throw new BusinessException("User with email already exists");
+            }
             else
                 throw new BusinessException("Internal server error.. Please contact for support");
         }
         EmailUtils.email(holder.getEmail(), String.format("%s %s", holder.getFirstname(), holder.getLastname()));
+        log.info("user registered with email: {}", holder.getEmail());
         return holderRepo.findByEmail(holder.getEmail());
     }
 
     public AccountHolder addAccount(Transaction transaction) throws BusinessException {
+        log.info("user is adding an account");
         AccountHolder holder = holderRepo.findById(transaction.getHolderId())
                 .orElseThrow(() -> new BusinessException("No such user"));
         Account newAccount = new Account(null, transaction.getAccountName(), false, 0.0, holder);
@@ -65,6 +75,7 @@ public class UserService {
             newAccount.setCredit(transaction.getCredit());
         }
         accountRepo.save(newAccount);
+        log.info("user successfully adding an account");
         return holderRepo.getOne(transaction.getHolderId());
     }
 
