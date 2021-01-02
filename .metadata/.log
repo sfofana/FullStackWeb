@@ -2834,3 +2834,230 @@ org.eclipse.core.runtime.OperationCanceledException
 
 !ENTRY org.eclipse.core.jobs 2 2 2020-12-05 19:11:33.507
 !MESSAGE Job found still running after platform shutdown.  Jobs should be canceled by the plugin that scheduled them during shutdown: org.eclipse.core.internal.events.AutoBuildJob
+!SESSION 2021-01-01 19:15:03.747 -----------------------------------------------
+eclipse.buildId=4.5.1.202001211336-RELEASE
+java.version=13.0.2
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.springframework.boot.ide.branding.sts4
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.springframework.boot.ide.branding.sts4
+
+!ENTRY org.eclipse.jface 2 0 2021-01-01 19:15:45.614
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2021-01-01 19:15:45.614
+!MESSAGE A conflict occurred for CTRL+SHIFT+T:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@5186b78a,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
+		,
+		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@3f6a9ba0,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-01-01 19:16:05.324
+!MESSAGE Entering DelegatingStreamConnectionProvider()
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-01-01 19:16:05.327
+!MESSAGE DelegatingStreamConnectionProvider classloader = org.eclipse.osgi.internal.loader.EquinoxClassLoader@3449cddf[org.springframework.tooling.boot.ls:1.15.0.202001210741(id=631)]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-01-01 19:16:05.334
+!MESSAGE SpringBootLanguageServer exists!
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-01-01 19:16:05.433
+!MESSAGE Instantiating ReusableClasspathListenerHandler
+
+!ENTRY org.eclipse.egit.ui 2 0 2021-01-01 19:16:13.773
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\sufya'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-01-01 19:16:16.284
+!MESSAGE Boot LS startup time from start to initialized: 10920ms
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-01-01 19:16:16.445
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.ymGAFBWgisBatched = true
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-01-01 19:16:16.467
+!MESSAGE subscribing to classpath changes: sts4.classpath.ymGAFBWg isBatched = true
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-01-01 19:16:16.476
+!MESSAGE Setting up ClasspathListenerManager
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-01-01 19:16:16.484
+!MESSAGE subsribers = {sts4.classpath.ymGAFBWg=Send Classpath Notifications(93)}
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-01-01 19:16:16.487
+!MESSAGE Sending initial event for all projects ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-01-01 19:16:16.491
+!MESSAGE project Backend ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-01-01 19:16:16.495
+!MESSAGE project DataStructure ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-01-01 19:16:16.497
+!MESSAGE Preparing classpath changed notification Backend
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-01-01 19:16:16.499
+!MESSAGE project Database ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-01-01 19:16:16.501
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-01-01 19:16:16.503
+!MESSAGE project JavaBasic ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-01-01 19:16:16.506
+!MESSAGE Sending initial event for all projects DONE
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-01-01 19:16:16.509
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.ymGAFBWg => OK
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-01-01 19:16:16.584
+!MESSAGE classpath=92 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-01-01 19:16:16.599
+!MESSAGE buffering callback sts4.classpath.ymGAFBWg Backend false 92
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-01-01 19:16:16.601
+!MESSAGE Preparing classpath changed notification DataStructure
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-01-01 19:16:16.608
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-01-01 19:16:16.629
+!MESSAGE classpath=92 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-01-01 19:16:16.643
+!MESSAGE buffering callback sts4.classpath.ymGAFBWg DataStructure false 92
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-01-01 19:16:16.645
+!MESSAGE Preparing classpath changed notification Database
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-01-01 19:16:16.648
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-01-01 19:16:16.668
+!MESSAGE classpath=92 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-01-01 19:16:16.683
+!MESSAGE buffering callback sts4.classpath.ymGAFBWg Database false 92
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-01-01 19:16:16.686
+!MESSAGE Preparing classpath changed notification JavaBasic
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-01-01 19:16:16.689
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-01-01 19:16:16.701
+!MESSAGE classpath=52 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-01-01 19:16:16.715
+!MESSAGE buffering callback sts4.classpath.ymGAFBWg JavaBasic false 52
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-01-01 19:16:16.718
+!MESSAGE executing callback sts4.classpath.ymGAFBWg 4 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-01-01 19:16:16.876
+!MESSAGE executing callback sts4.classpath.ymGAFBWg SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-01-01 19:18:12.037
+!MESSAGE Preparing classpath changed notification email-service
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-01-01 19:18:12.040
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-01-01 19:18:12.043
+!MESSAGE classpath=1 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-01-01 19:18:12.045
+!MESSAGE buffering callback sts4.classpath.ymGAFBWg email-service false 1
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-01-01 19:18:12.048
+!MESSAGE executing callback sts4.classpath.ymGAFBWg 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-01-01 19:18:12.063
+!MESSAGE executing callback sts4.classpath.ymGAFBWg SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-01-01 19:18:14.387
+!MESSAGE Preparing classpath changed notification email-service
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-01-01 19:18:14.390
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-01-01 19:18:14.405
+!MESSAGE classpath=53 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-01-01 19:18:14.417
+!MESSAGE buffering callback sts4.classpath.ymGAFBWg email-service false 53
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-01-01 19:18:14.419
+!MESSAGE executing callback sts4.classpath.ymGAFBWg 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-01-01 19:18:14.436
+!MESSAGE executing callback sts4.classpath.ymGAFBWg SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-01-01 19:18:21.227
+!MESSAGE Preparing classpath changed notification email-service
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-01-01 19:18:21.230
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-01-01 19:18:21.242
+!MESSAGE classpath=53 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-01-01 19:18:21.256
+!MESSAGE buffering callback sts4.classpath.ymGAFBWg email-service false 53
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-01-01 19:18:21.258
+!MESSAGE executing callback sts4.classpath.ymGAFBWg 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-01-01 19:18:21.280
+!MESSAGE executing callback sts4.classpath.ymGAFBWg SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-01-01 19:18:24.008
+!MESSAGE Preparing classpath changed notification email-service
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-01-01 19:18:24.011
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-01-01 19:18:24.020
+!MESSAGE classpath=53 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-01-01 19:18:24.028
+!MESSAGE buffering callback sts4.classpath.ymGAFBWg email-service false 53
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-01-01 19:18:24.030
+!MESSAGE executing callback sts4.classpath.ymGAFBWg 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-01-01 19:18:24.047
+!MESSAGE executing callback sts4.classpath.ymGAFBWg SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-01-01 19:23:15.514
+!MESSAGE Preparing classpath changed notification email-service
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-01-01 19:23:15.516
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-01-01 19:23:15.526
+!MESSAGE classpath=53 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-01-01 19:23:15.534
+!MESSAGE buffering callback sts4.classpath.ymGAFBWg email-service false 53
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-01-01 19:23:15.536
+!MESSAGE executing callback sts4.classpath.ymGAFBWg 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-01-01 19:23:15.554
+!MESSAGE executing callback sts4.classpath.ymGAFBWg SUCCESS [done]

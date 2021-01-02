@@ -1,4 +1,4 @@
-package com.sfofana.bank.bank.util;
+package com.sfofana.email.util;
 
 import javax.mail.*;
 import javax.mail.internet.InternetAddress;
@@ -12,10 +12,10 @@ import java.util.Properties;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class EmailUtils {
+public class MailerUtils {
 
-    private static final String email = "your-email";
-    private static final String password = "your-password";
+    private static final String email = "sfofanaemailservice@gmail.com";
+    private static final String password = "UofH2011";
     private static final String templatePath = String.format("%s/templates/register.html", System.getProperty("user.dir"));
 
     public static void email(String recipient, String name) throws MessagingException, IOException {
