@@ -14,11 +14,11 @@ import java.util.stream.Stream;
 
 public class MailerUtils {
 
-    private static final String email = "sfofanaemailservice@gmail.com";
-    private static final String password = "UofH2011";
-    private static final String templatePath = String.format("%s/templates/register.html", System.getProperty("user.dir"));
+    private static final String email = "your-email";
+    private static final String password = "your-password";
+    private static final String templatePath = String.format("%s/templates/email.html", System.getProperty("user.dir"));
 
-    public static void email(String recipient, String name) throws MessagingException, IOException {
+    public static void send(String recipient, String name) throws MessagingException, IOException {
         Properties prop = new Properties();
         prop.put("mail.smtp.auth", true);
         prop.put("mail.smtp.starttls.enable", "true");
@@ -41,6 +41,7 @@ public class MailerUtils {
         message.setFrom(new InternetAddress(email));
         message.setRecipient(Message.RecipientType.TO, new InternetAddress(recipient));
         message.setSubject("Thank you for registering with JSF Banking!");
+//        message.setText("testing emails service");
         message.setContent(emailTemplate(name), "text/html");
         return message;
     }
@@ -49,7 +50,7 @@ public class MailerUtils {
         Stream<String> template = Files.lines(Paths.get(templatePath));
         List<String> formatted = new ArrayList<>();
         template.forEach(line -> {
-            formatted.add(line.replaceAll("USER PLACEHOLDER", message));
+            formatted.add(line.replaceAll("NAME PLACEHOLDER", message));
         });
         return formatted.stream().collect(Collectors.joining());
     }
